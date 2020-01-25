@@ -26,16 +26,25 @@
                                 <rect key="frame" x="192" y="302" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="戻る"/>
+                                <connections>
+                                    <action selector="previousimage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Vo-aY-B71"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K7s-71-eIn">
                                 <rect key="frame" x="289" y="302" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="再生"/>
+                                <connections>
+                                    <action selector="playpause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bqb-ST-4l1"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1b-4f-TwO">
                                 <rect key="frame" x="95" y="302" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="進む"/>
+                                <connections>
+                                    <action selector="nextimage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LeT-Xb-4Pz"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
