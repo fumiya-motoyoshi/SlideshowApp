@@ -48,29 +48,27 @@ class ViewController: UIViewController {
     // タイマー用の時間のための変数
     var timer_sec: Float = 0
     
-    @objc func onTimer(_ timer: Timer) {
-        self.timer_sec += 2
+    // selector: #selector(updatetimer(_:)) で指定された関数
+    // timeInterval: 2.0, repeats: true で指定された通り、imerによって、2秒毎に呼び出され続ける関数
+    @objc func onTimer(timer: Timer) {
+        
+        //関数が呼ばれていることを確認
+        print("onTimer")
+        
+        //表示している画像の番号を1増やす
+        dispImageNo += 1
+        
+        //表示している画像の番号を元に画像を表示する
+        displayImage()
+        
     }
-    
+
     //再生・一時停止ボタン
     @IBAction func playpause(_ sender: Any) {
         
-        timer = Timer.scheduledTimerWithTimeInterval(2.0, target: self, selector: #selector(ViewController.onTimer(_:)), userInfo: nil, repeats: true)
-        
-        //Timerによって、一定の間隔で呼び出される関数
-        func onTimer(timer: Timer) {
-            
-            //関数が呼ばれていることを確認
-            print("onTimer")
-            
-            //表示している画像の番号を1増やす
-            dispImageNo += 1
-            
-            //表示している画像の番号を元に画像を表示する
-            displayImage()
-            
-        }
-
+        // 再生ボタンを押すとタイマー作成、始動
+        self.timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(onTimer(_:)), userInfo: nil, repeats: true)
+    
     }
     
     
