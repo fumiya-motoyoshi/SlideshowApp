@@ -44,6 +44,7 @@
                                 <state key="normal" title="進む"/>
                                 <connections>
                                     <action selector="nextimage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LeT-Xb-4Pz"/>
+                                    <action selector="playpause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ob4-IW-QVt"/>
                                 </connections>
                             </button>
                         </subviews>

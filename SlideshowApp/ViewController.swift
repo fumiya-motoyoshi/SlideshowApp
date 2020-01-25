@@ -43,14 +43,14 @@ class ViewController: UIViewController {
     }
     
     //タイマー
-    var timer = Timer!
+    var timer: Timer!
     
     // タイマー用の時間のための変数
     var timer_sec: Float = 0
     
     // selector: #selector(updatetimer(_:)) で指定された関数
     // timeInterval: 2.0, repeats: true で指定された通り、imerによって、2秒毎に呼び出され続ける関数
-    @objc func onTimer(timer: Timer) {
+    @objc func onTimer(_ timer: Timer) {
         
         //関数が呼ばれていることを確認
         print("onTimer")
@@ -67,7 +67,35 @@ class ViewController: UIViewController {
     @IBAction func playpause(_ sender: Any) {
         
         // 再生ボタンを押すとタイマー作成、始動
+        // 動作中のタイマーを1つに保つために、 timer が存在しない場合だけ、タイマーを生成して動作させる
+        if self.timer == nil {
         self.timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(onTimer(_:)), userInfo: nil, repeats: true)
+        }
+        
+    
+        //再生ボタンを押すと、ボタンの名称が停止に変わる
+        //if UIButton: String = "再生" {
+            //button.setTitle("停止", for: .normal)
+        //}
+        
+        //停止ボタンを押すと、タイマーがストップする
+        if self.timer != nil {
+            self.timer.invalidate()   // タイマーを停止する
+            self.timer = nil          // startTimer() の timer == nil で判断するために、 timer = nil としておく
+        }
+        
+        //再生ボタンをタップすると、有効になっている状態の進むボタン、戻るボタンをタップ不可にする
+        //if
+        
+        //button.isEnabled = false
+        
+        
+        //停止ボタンをタップすると自動送りが止まる
+        
+        //停止ボタンをタップすると、進むボタンと戻るボタンをタップ可能にする
+        
+        
+        
     
     }
     
