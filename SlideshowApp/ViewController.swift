@@ -64,6 +64,14 @@ class ViewController: UIViewController {
     }
 
     //再生・一時停止ボタン
+    
+    @IBOutlet weak var playpauselabel: UIButton!
+    
+    @IBOutlet weak var nextimagelabel: UIButton!
+    
+    @IBOutlet weak var previmagelabel: UIButton!
+    
+    
     @IBAction func playpause(_ sender: Any) {
         
         // 再生ボタンを押すとタイマー作成、始動
@@ -72,31 +80,35 @@ class ViewController: UIViewController {
         self.timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(onTimer(_:)), userInfo: nil, repeats: true)
         }
         
-    
         //再生ボタンを押すと、ボタンの名称が停止に変わる
-        //if UIButton: String = "再生" {
-            //button.setTitle("停止", for: .normal)
-        //}
+        //戻るボタンを押すと、ボタンの名称が停止に変わる
+        if self.timer != nil {
+            playpauselabel.setTitle("停止", for: .normal) //タイマーが再生している＝nilではない状態
+        } else {
+            playpauselabel.setTitle("再生", for: .normal) //タイマーが停止している＝nilの状態
+        }
+        
+        //再生ボタンをタップすると、有効になっている状態の進むボタン、戻るボタンをタップ不可にする
+        //タイマーが再生している＝nilではない状態
+        if self.timer != nil {
+            nextimagelabel.isEnabled = false
+            previmagelabel.isEnabled = false
+        }
         
         //停止ボタンを押すと、タイマーがストップする
+        //停止ボタンをタップすると自動送りが止まる
         if self.timer != nil {
             self.timer.invalidate()   // タイマーを停止する
             self.timer = nil          // startTimer() の timer == nil で判断するために、 timer = nil としておく
         }
         
-        //再生ボタンをタップすると、有効になっている状態の進むボタン、戻るボタンをタップ不可にする
-        //if
+        //停止ボタンをタップすると、無効になっている状態の進むボタンと戻るボタンをタップ可能にする
+        //タイマーが停止している＝nilの状態
+        if self.timer == nil {
+            nextimagelabel.isEnabled = true
+            previmagelabel.isEnabled = true
+        }
         
-        //button.isEnabled = false
-        
-        
-        //停止ボタンをタップすると自動送りが止まる
-        
-        //停止ボタンをタップすると、進むボタンと戻るボタンをタップ可能にする
-        
-        
-        
-    
     }
     
     

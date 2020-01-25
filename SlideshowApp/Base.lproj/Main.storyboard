@@ -35,7 +35,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="再生"/>
                                 <connections>
-                                    <action selector="playpause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bqb-ST-4l1"/>
+                                    <action selector="playpause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KAj-Ke-hic"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1b-4f-TwO">
@@ -53,6 +53,9 @@
                     </view>
                     <connections>
                         <outlet property="imageView" destination="pc4-xS-OZU" id="g5L-jP-n2r"/>
+                        <outlet property="nextimagelabel" destination="d1b-4f-TwO" id="ESd-19-ULU"/>
+                        <outlet property="playpauselabel" destination="K7s-71-eIn" id="pPC-wx-93Q"/>
+                        <outlet property="previmagelabel" destination="3YN-eM-4Xu" id="9Vu-HI-CPl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
