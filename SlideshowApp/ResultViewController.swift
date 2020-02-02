@@ -13,9 +13,11 @@ class ResultViewController: UIViewController {
     //UIImageView（拡大画像表示用）をOutlet接続
     @IBOutlet weak var extendedImage: UIImageView!
     
-    //表示されている画像の番号を受け取るためのプロパティを宣言しておく
-    var dispImageNo = 0
+    //クラスのインスタンスを作成
+    var resultViewController = ResultViewController()
     
+    //表示されている画像の番号を受け取るためのプロパティを宣言しておく
+    var x:Int = 0
     
     
     override func viewDidLoad() {
@@ -23,8 +25,9 @@ class ResultViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
+        //viewControllerから表示されている画像の番号を取得する(xに数値を代入)
+        let dispImageNo = x
         
-
         //表示している画像の番号を元に画像を表示
         func displayImage() {
             
@@ -34,13 +37,17 @@ class ResultViewController: UIViewController {
                 "image2",
                 "image3",
             ]
-            
+        
             //表示している画像の番号から名前を取り出し
             let name = imageNameArray[dispImageNo]
             
             //画像を読み込み
             let image = UIImage(named: name)
             
+            //extendedImageに読み込んだ画像をセット
+            extendedImage.image = image
+            
+    
         }
         
     }

@@ -12,7 +12,6 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -59,20 +58,16 @@ class ViewController: UIViewController {
     }
     
     
-    //画像をタップすると別の画面に遷移
-    @IBAction func tapAction(_ sender: Any) {
+    
+    //segueから遷移先のResultViewControllerを取得する
+    func prepare( fpr segue: UIStoryboardSegue, sender: Any?) {
         
         //segueから遷移先のResultViewControllerを取得する
-        func prepare( fpr segue: UIStoryboardSegue, sender: Any?) {
-            let _:ResultViewController = segue.destination as! ResultViewController
-    
-            //遷移先のResultViewControllerで宣言しているxに値（現在表示されている画像の番号）を代入して渡す
-            var dispImageNo = 
-            
-            
-        }
+        let resultViewController:ResultViewController = segue.destination as! ResultViewController
         
-    }
+        //遷移先のResultViewControllerで宣言しているxに表示している画像の番号を渡す
+        resultViewController.x = dispImageNo
+        }
     
     //遷移先から戻る
     @IBAction func unwind(_ segue: UIStoryboardSegue){
