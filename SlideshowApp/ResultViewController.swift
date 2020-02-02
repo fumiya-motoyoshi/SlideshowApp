@@ -12,10 +12,7 @@ class ResultViewController: UIViewController {
 
     //UIImageView（拡大画像表示用）をOutlet接続
     @IBOutlet weak var extendedImage: UIImageView!
-    
-    //クラスのインスタンスを作成
-    var resultViewController = ResultViewController()
-    
+        
     //表示されている画像の番号を受け取るためのプロパティを宣言しておく
     var x:Int = 0
     

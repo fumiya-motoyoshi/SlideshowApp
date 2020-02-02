@@ -46,6 +46,9 @@
                                     <constraint firstAttribute="width" constant="240" id="0KA-Ld-HIe"/>
                                     <constraint firstAttribute="height" constant="130" id="v8E-K1-5XW"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="YSI-SV-8lB" appends="YES" id="hgw-xw-Wi9"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -69,7 +72,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="YSI-SV-8lB"/>
+                <tapGestureRecognizer id="YSI-SV-8lB">
+                    <connections>
+                        <segue destination="IFZ-l4-UP9" kind="show" id="ugT-aK-uRt"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="69.293478260869577"/>
         </scene>
