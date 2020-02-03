@@ -69,6 +69,7 @@
                         <outlet property="nextimagelabel" destination="d1b-4f-TwO" id="ESd-19-ULU"/>
                         <outlet property="playpauselabel" destination="K7s-71-eIn" id="pPC-wx-93Q"/>
                         <outlet property="previmagelabel" destination="3YN-eM-4Xu" id="9Vu-HI-CPl"/>
+                        <segue destination="IFZ-l4-UP9" kind="show" identifier="toNext" id="Dxc-Rd-YYE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -122,4 +123,7 @@
             <point key="canvasLocation" x="815.94202898550736" y="68.478260869565219"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Dxc-Rd-YYE"/>
+    </inferredMetricsTieBreakers>
 </document>

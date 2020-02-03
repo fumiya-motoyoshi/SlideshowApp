@@ -57,10 +57,9 @@ class ViewController: UIViewController {
         
     }
     
-    
-    
+
     //segueから遷移先のResultViewControllerを取得する
-    func prepare( fpr segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare( for segue: UIStoryboardSegue, sender: Any?) {
         
         //segueから遷移先のResultViewControllerを取得する
         let resultViewController:ResultViewController = segue.destination as! ResultViewController

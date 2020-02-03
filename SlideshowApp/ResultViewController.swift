@@ -22,8 +22,10 @@ class ResultViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        //viewControllerから表示されている画像の番号を取得する(xに数値を代入)
-        let dispImageNo = x
+        //表示している画像の番号を元に画像を表示する
+        displayImage()
+        
+        }
         
         //表示している画像の番号を元に画像を表示
         func displayImage() {
@@ -35,6 +37,9 @@ class ResultViewController: UIViewController {
                 "image3",
             ]
         
+            //viewControllerから表示されている画像の番号を取得する(xに数値を代入)
+            let dispImageNo = x
+            
             //表示している画像の番号から名前を取り出し
             let name = imageNameArray[dispImageNo]
             
@@ -60,4 +65,4 @@ class ResultViewController: UIViewController {
     }
     */
 
-}
+
