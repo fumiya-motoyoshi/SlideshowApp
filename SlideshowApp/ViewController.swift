@@ -66,7 +66,18 @@ class ViewController: UIViewController {
         
         //遷移先のResultViewControllerで宣言しているxに表示している画像の番号を渡す
         resultViewController.x = dispImageNo
+        
+        if self.timer != nil {
+            self.timer.invalidate()   // タイマーを停止する
+            self.timer = nil          // startTimer() の timer == nil で判断するために、 timer = nil としておく
+            playpauselabel.setTitle("再生", for: .normal)//タイマーが停止している＝nilの状態
+            //停止ボタンをタップすると、無効になっている状態の進むボタンと戻るボタンをタップ可能にする
+            //タイマーが停止している＝nilの状態
+            nextimagelabel.isEnabled = true
+            previmagelabel.isEnabled = true
         }
+        
+    }
     
     //遷移先から戻る
     @IBAction func unwind(_ segue: UIStoryboardSegue){

@@ -16,7 +16,7 @@ class ResultViewController: UIViewController {
     //表示されている画像の番号を受け取るためのプロパティを宣言しておく
     var x:Int = 0
     
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,7 +26,9 @@ class ResultViewController: UIViewController {
         displayImage()
         
         }
-        
+    
+
+    
         //表示している画像の番号を元に画像を表示
         func displayImage() {
             
